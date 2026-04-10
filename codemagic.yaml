@@ -6,7 +6,6 @@ workflows:
     environment:
       node: 18
       java: 11
-      android_sdk: 34
     scripts:
       - name: Install dependencies
         script: pnpm install
