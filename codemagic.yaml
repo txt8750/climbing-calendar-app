@@ -1,0 +1,16 @@
+workflows:
+  default-workflow:
+    name: Default Workflow
+    instance_type: linux_x2
+    max_build_duration: 120
+    environment:
+      node: 18
+      java: 11
+      android_sdk: 34
+    scripts:
+      - name: Install dependencies
+        script: pnpm install
+      - name: Build APK
+        script: cd android && ./gradlew assembleDebug
+    artifacts:
+      - android/app/build/outputs/apk/debug/*.apk
